@@ -141,3 +141,14 @@ CREATE TABLE IF NOT EXISTS auditoria_precio (
     FOREIGN KEY (producto_id) REFERENCES producto(id),
     FOREIGN KEY (presentacion_id) REFERENCES presentacion(id)
 );
+
+-- 10.
+
+CREATE TABLE IF NOT EXISTS registro_clientes (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    cliente_id INT UNSIGNED NOT NULL,
+    nombre VARCHAR(100),
+    telefono VARCHAR(15),
+    fecha_creacion DATETIME DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (cliente_id) REFERENCES cliente(id)
+);
