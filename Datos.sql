@@ -79,3 +79,8 @@ INSERT INTO resumen_ventas (fecha, total_pedidos, total_ingresos) VALUES
 INSERT INTO alerta_stock (ingrediente_id, stock_actual, fecha_alerta) VALUES
 (3, 5, '2025-06-20 14:00:00'),
 (4, 3, '2025-06-20 14:05:00');
+
+INSERT INTO tipo_producto(nombre) VALUES ('Bebida');
+INSERT INTO producto(nombre, tipo_producto_id) VALUES ('Cola', 1);
+INSERT INTO presentacion(nombre) VALUES ('Botella 500ml');
+INSERT INTO producto_presentacion(producto_id, presentacion_id, precio)VALUES (1, 1, 3500);

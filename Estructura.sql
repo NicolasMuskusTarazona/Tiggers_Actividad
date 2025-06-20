@@ -129,3 +129,15 @@ CREATE TABLE IF NOT EXISTS alerta_stock (
     creado_en DATETIME DEFAULT CURRENT_TIMESTAMP,
     FOREIGN KEY (ingrediente_id) REFERENCES ingrediente(id)
 );
+
+-- 3.
+CREATE TABLE IF NOT EXISTS auditoria_precio (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    producto_id INT UNSIGNED NOT NULL,
+    presentacion_id INT UNSIGNED NOT NULL,
+    precio_antiguo DECIMAL(10,2) NOT NULL,
+    precio_nuevo DECIMAL(10,2) NOT NULL,
+    fecha_cambio DATETIME DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (producto_id) REFERENCES producto(id),
+    FOREIGN KEY (presentacion_id) REFERENCES presentacion(id)
+);
